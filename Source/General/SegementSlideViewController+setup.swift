@@ -53,7 +53,12 @@ extension SegementSlideViewController {
     
     private func setupSegementSlideScrollView() {
         view.addSubview(scrollView)
-        scrollView.constraintToSuperview()
+//        scrollView.constraintToSuperview()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 26).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = .never
         } else {
